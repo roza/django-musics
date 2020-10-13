@@ -1,0 +1,5 @@
+.idea/
+__pycache__
+build/
+venv/
+db.sqlite3

@@ -1,0 +1,5 @@
+[{"model": "musiques.morceau", "pk": 2, "fields": {"titre": "Space Oddity", "artiste": "David Bowie", "date_sortie": null}}, 
+ {"model": "musiques.morceau", "pk": 3, "fields": {"titre": "The partisan", "artiste": "Leonard Cohen", "date_sortie": null}}, 
+ {"model": "musiques.morceau", "pk": 4, "fields": {"titre": "Suzanne", "artiste": "Leonard Cohen", "date_sortie": null}}, 
+ {"model": "musiques.artiste", "pk": 3, "fields": {"nom": "David Bowie"}}, 
+ {"model": "musiques.artiste", "pk": 4, "fields": {"nom": "Leonard Cohen"}}]
