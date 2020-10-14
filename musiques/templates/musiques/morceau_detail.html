@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+
+{% block header %}
+           <h2>Détail du Morceau  {{object.pk}}</h2>
+{% endblock %}
+{% block content %}
 <ul>
     <li>{{object.titre}}</li>
     <li>{{object.interprete.nom}}</li>
@@ -5,4 +11,5 @@
     <a href="{% url 'musiques:morceau_list' %}">
         Revenir a la liste
     </a>
-    
+
+{% endblock %}

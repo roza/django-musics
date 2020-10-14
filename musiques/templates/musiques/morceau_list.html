@@ -1,4 +1,11 @@
-<h2>Morceaux</h2>
+
+{% extends "base.html" %}
+
+{% block header %}
+           <h2>Morceaux</h2>
+{% endblock %}
+{% block content %}
+
 <ul>
     {% for morceau in morceau_list %}
     <li>
@@ -7,3 +14,5 @@
     </li>
     {% endfor %}
 </ul>
+
+{% endblock %}
