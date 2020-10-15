@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import Morceau 
+from .models import Morceau, Artiste
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 
@@ -27,4 +27,23 @@ class MorceauDelete(DeleteView):
 class MorceauUpdate(UpdateView):
     model = Morceau
     fields = ['titre','interprete']
+    template_name_suffix = '_update_form'
+
+class ArtisteDetailView(DetailView):
+    model = Artiste
+
+class ArtisteList(ListView):
+    model = Artiste
+
+class ArtisteCreate(CreateView):
+    model = Artiste
+    fields = ['nom']
+
+class ArtisteDelete(DeleteView):
+    model = Artiste
+    success_url = reverse_lazy('musiques:artiste_list')
+
+class ArtisteUpdate(UpdateView):
+    model = Artiste
+    fields = ['nom']
     template_name_suffix = '_update_form'

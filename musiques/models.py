@@ -8,6 +8,9 @@ class Artiste(models.Model):
     def __str__(self):
         return self.nom
 
+    def get_absolute_url(self):
+        return reverse('musiques:artiste-detail', kwargs={'pk': self.pk})
+
 
 class Morceau(models.Model):
     titre = models.CharField(max_length=64)

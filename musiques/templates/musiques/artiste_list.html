@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+
+{% block header %}
+           <h2>Artistes</h2>
+{% endblock %}
+{% block content %}
+
+<ul>
+    {% for artiste in artiste_list %}
+    <li>
+        <h3>Artiste n°{{artiste.pk}}</h3>
+         {{ artiste.nom }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
