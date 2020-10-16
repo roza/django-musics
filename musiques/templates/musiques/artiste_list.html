@@ -1,18 +1,45 @@
 
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'node_modules/@fortawesome/fontawesome-free/css/all.min.css' %}">
+{% endblock %}
+
 {% block header %}
            <h2>Artistes</h2>
 {% endblock %}
 {% block content %}
 
-<ul>
-    {% for artiste in artiste_list %}
-    <li>
-        <h3>Artiste n°{{artiste.pk}}</h3>
-         {{ artiste.nom }}
-    </li>
-    {% endfor %}
-</ul>
+<div class="card bg-secondary">
+    <div class="card-body">
+      <div class="row" style="row-gap: 1rem">
+        {% if artiste_list %}
+          {% for artiste in artiste_list %}
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+              <div class="card bg-light text-dark">
+                <h5 class="card-header">
+                    Artiste n°{{morceau.pk}}
+                </h5>
+                <div class="card-body">
+                  <h5 class="card-text"> {{ artiste.nom }} </h5>
+                </div>
+                <div class="card-footer d-flex justify-content-end" style="column-gap: 1rem">
+                    <a href="{% url 'musiques:artiste-detail' artiste.id %}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
+                    <a href="{% url 'musiques:artiste_update' artiste.id %}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                    <a href="{% url 'musiques:artiste-delete' artiste.id %}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                  </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h4 class="container text-warning">Aucun Artiste !</h4>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <a href="{% url 'musiques:artiste_create' %}" class="btn btn-primary mt-3">Ajouter un morceau</a>
 
 {% endblock %}
