@@ -6,7 +6,7 @@ ports:
 #      onOpen: open-preview
 
 tasks:
-    - init: pip3 install -r requirements.txt  
+    - init: pip3 install -r requirements.txt  && yarn newinstall
       command: clear && ./manage.py migrate && ./manage.py loaddata initial_musiques_data.json && ./manage.py runserver
       name: Split terminal
     - openMode: split-right
