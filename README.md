@@ -24,7 +24,7 @@ Django example project with bootstrap4 templates (Bootswatch) , Generic Views, e
 `./manage.py runserver`
 
 
-## ou simplement ... avec gitpod 
+## ou simply ... with gitpod 
 
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/roza/django-musics)
